@@ -27,13 +27,4 @@ Feature: Purchase an item on Amazon
   Then select first item from the list
   And add the item to the cart
 
-#  @PurchasePhone
-#  Scenario: Purchase another Item
-#    Given I am on the Amazon homepage
-#    When I search for a mobile "iphone"
-#    And I select a mobile from the search results
-#   # And checking the picture of product
-#    And I add the mobile to the cart
-#    #Then i should checkout the item
-
 

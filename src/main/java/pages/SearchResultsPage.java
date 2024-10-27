@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,7 +20,8 @@ public class SearchResultsPage {
     }
 
     public void selectFirstItem() {
-        WebElement firstItem = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".s-main-slot .s-result-item")));
+       WebElement firstItem = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal' and contains(text(),'Apple MacBook Air Laptop: Apple M1 chip')]")));
+        //WebElement firstItem = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".s-main-slot .s-result-item")));
         Assert.assertTrue(firstItem.isDisplayed());
         firstItem.click();
 
@@ -29,6 +31,16 @@ public class SearchResultsPage {
         WebElement macbook = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='_apple-brand-showcase_showcase_showcase-link__3QpvX qa-link']/p[@class='a-spacing-none a-size-small _apple-brand-showcase_showcase_hidden-overflow__1m64t']/span[text()='MacBook Pro (14-inch)']")));
         Assert.assertTrue(macbook.isDisplayed());
         macbook.click();
+
+    }
+
+
+
+    public void selectMacbook(){
+        WebElement macbook = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='_apple-brand-showcase_showcase_showcase-link__3QpvX qa-link']/p[@class='a-spacing-none a-size-small _apple-brand-showcase_showcase_hidden-overflow__1m64t']/span[text()='MacBook Pro (14-inch)']")));
+        Assert.assertTrue(macbook.isDisplayed());
+        macbook.click();
+
     }
 
     public void addToWishList() {
@@ -37,4 +49,9 @@ public class SearchResultsPage {
         wishList.click();
     }
 
+    public void scrollDown() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,200)");
+
+    }
 }
