@@ -16,7 +16,7 @@ public class SearchResultsPage {
 
     public SearchResultsPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        //this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     public void selectFirstItem() {

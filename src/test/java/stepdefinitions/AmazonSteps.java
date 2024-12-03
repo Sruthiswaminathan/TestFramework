@@ -46,7 +46,7 @@ public class AmazonSteps {
         this.searchResultsPage = new SearchResultsPage(driver);
         this.productPage = new ProductPage(driver);
         this.cartPage = new CartPage(driver);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+       // this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @Given("I am on the Amazon homepage")
